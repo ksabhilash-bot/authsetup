@@ -41,12 +41,13 @@ export default function ResetPasswordPage() {
 
       if (data.success) {
         toast.success("Password reset successfully. Please log in.");
-        navigate("/login");
+        navigate.push("/login");
       } else {
         toast.error("error occured");
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.",error);
+      toast.error("An error occurred. Please try again.", error);
+      console.log(error);
     } finally {
       setIsLoading(false);
     }
